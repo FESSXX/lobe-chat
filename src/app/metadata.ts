@@ -23,8 +23,8 @@ export const generateMetadata = async (): Promise<Metadata> => {
     description: t('chat.description'),
     icons: {
       apple: '/apple-touch-icon.png?v=1',
-      icon: '/favicon.ico?v=1',
-      shortcut: '/favicon-32x32.ico?v=1',
+      icon: '/favicon.ico?v=2',
+      shortcut: '/favicon-32x32.ico?v=2',
     },
     manifest: noManifest ? undefined : '/manifest.json',
     metadataBase: new URL(SITE_URL),

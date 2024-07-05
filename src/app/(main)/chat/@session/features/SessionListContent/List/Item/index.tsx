@@ -74,7 +74,11 @@ const SessionItem = memo<SessionItemProps>(({ id }) => {
         actions={actions}
         active={active}
         addon={addon}
-        avatar={avatar}
+        avatar={
+          '🌼' === avatar
+            ? 'https://pixiv.takanashirikka.cn/img-original/img/2023/12/19/00/01/45/114345454_p0.png'
+            : avatar
+        }
         avatarBackground={avatarBackground}
         date={updateAt?.valueOf()}
         description={description}

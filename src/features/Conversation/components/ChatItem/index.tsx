@@ -128,7 +128,7 @@ const Item = memo<ChatListItemProps>(({ index, id }) => {
           errorMessage={<ErrorMessageExtra data={item} />}
           fontSize={fontSize}
           loading={generating}
-          message={'1213123213213123123123'}
+          message={item.content}
           messageExtra={<MessageExtra data={item} />}
           onAvatarClick={onAvatarsClick?.(item.role)}
           onChange={(value) => updateMessageContent(item.id, value)}

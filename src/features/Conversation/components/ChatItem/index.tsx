@@ -55,6 +55,12 @@ const Item = memo<ChatListItemProps>(({ index, id }) => {
     return chatSelectors.currentChatsWithGuideMessage(meta)(s)[index];
   }, isEqual);
 
+  //临时给AI加一个头像
+  if (item && item.role === 'assistant' && item?.meta?.avatar) {
+    item.meta.avatar =
+      'https://pixiv.takanashirikka.cn/img-original/img/2023/12/19/00/01/45/114345454_p0.png';
+  }
+
   const historyLength = useChatStore((s) => chatSelectors.currentChats(s).length);
 
   const [isMessageLoading, generating, editing, toggleMessageEditing, updateMessageContent] =
@@ -115,14 +121,14 @@ const Item = memo<ChatListItemProps>(({ index, id }) => {
               }}
             />
           }
-          avatar={item.meta}
+          avatar={item?.meta}
           className={cx(styles.message, isMessageLoading && styles.loading)}
           editing={editing}
           error={error}
           errorMessage={<ErrorMessageExtra data={item} />}
           fontSize={fontSize}
           loading={generating}
-          message={item.content}
+          message={'1213123213213123123123'}
           messageExtra={<MessageExtra data={item} />}
           onAvatarClick={onAvatarsClick?.(item.role)}
           onChange={(value) => updateMessageContent(item.id, value)}
